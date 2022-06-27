@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 
 const UsersSchema = mongoose.Schema({
-    name: {type: String, require: true},
-    rollNo: {type: String, require: true},
-    branch: {type: String, require: true},
-    gender: {type: String, require: true},
-    email: {type: String, require: true},
+    email: {type: String, require: true,  unique: true},
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    mobileNumber: { type: String, required: true },
+    gender: { type: String, default: 'male' },
     dateOfBirth: {type: String, require: true},
     password: {type: String, require: true},
-    isRegistered: {type: Boolean, default: false}
+    isRegistered: {type: Boolean, default: false},
+    isDeleted: {type: Boolean, default: false}
 }, {
     timestamps: true
 });

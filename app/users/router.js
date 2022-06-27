@@ -6,7 +6,7 @@ const passport = require('passport');
 require('../middleware/authenticate.js')(passport);
 
 //getEmailWithPost
-router.get('/getAllUsers', controller.getAllUsers);
+router.post('/getAllUsers', controller.getAllUsers);
 
 //find user details
 router.get('/getUserById/:id', controller.findUserData);
